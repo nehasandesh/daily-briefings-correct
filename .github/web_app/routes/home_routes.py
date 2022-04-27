@@ -15,4 +15,23 @@ def index():
 def about():
     print("ABOUT...")
     return "About Me"
+
+
+
+   @home_routes.route("/another")
+   def another():
+       print("ABOUT...")
+       return "Here is another page"
+
+
+@home_routes.route("/hello")
+def hello_world():
+    print("HELLO...", dict(request.args))
+
+    name = request.args.get("name") or "World"
+
+
+    message = f"Hello, {name}!"
+    return message
+
     
